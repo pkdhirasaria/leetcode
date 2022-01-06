@@ -17,10 +17,10 @@ class Solution:
             
             left = dfs(root.left,d+1) 
             right = dfs(root.right,d+1) 
-            if left == right == self.depth:
+            if left == right and left >= self.depth:
                 self.lca = root
                 self.depth = left
-            print(root.val,d,self.depth,self.lca if not self.lca else self.lca.val)
+            # print(root.val,d,self.depth,self.lca if not self.lca else self.lca.val)
             return max(left,right) 
         dfs(root,0)
         return self.lca
