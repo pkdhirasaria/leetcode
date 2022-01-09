@@ -11,15 +11,15 @@ class Solution:
                 return self.parent[x]
             
             def union(self,x,y):
-                x,y = self.find(x), self.find(y)
-                if x==y:
-                    return False
+                # x,y = self.find(x), self.find(y)
+                # if x==y:
+                #     return False
                 if self.rank[x] > self.rank[y]:
                     self.parent[y] = x
                 else:
                     self.parent[x] = y
                     self.rank[y] += 1
-                return True
+                # return True
         uf = DSU(n)
         ans = []
         # print(d)
@@ -32,8 +32,8 @@ class Solution:
                     res = False
                     break
             if res:
-                uf.parent[x] = y
-                # uf.union(x,y)
+                # uf.parent[x] = y
+                uf.union(x,y)
             ans.append(res)
             
                 # a
