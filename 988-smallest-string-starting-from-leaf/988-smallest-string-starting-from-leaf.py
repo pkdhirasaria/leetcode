@@ -8,7 +8,7 @@ class Solution:
     def smallestFromLeaf(self, root: Optional[TreeNode]) -> str:
         q = deque()
         q.append((root,chr(root.val+97)))
-        ans = 'z'*9000
+        ans = '~'
         while q:
             node,val = q.popleft()
             # print(node.val,val)
