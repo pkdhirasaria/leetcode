@@ -8,13 +8,9 @@ class Node:
 
 class Solution:
     def maxDepth(self, root: 'Node') -> int:
-        if not root:
+        if root is None:
             return 0
-        def dfs(root,h):
-            if not root or not root.children:
-                return h
-            t =0
-            for c in root.children:
-                t = max(t,dfs(c,h+1))
-            return t
-        return dfs(root,1)
+        depth = 0
+        for i in root.children:
+            depth = max(depth, self.maxDepth(i))
+        return depth+1 
