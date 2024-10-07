@@ -1,9 +1,4 @@
 class Solution:
     def largestUniqueNumber(self, nums: List[int]) -> int:
-        c = Counter(nums)
-        m = -1
-        for k,v in c.items():
-            if v == 1:
-                m = max(m,k)
-        return m
+        return max([k for k,v in Counter(nums).items() if v ==1],default=-1)
         
